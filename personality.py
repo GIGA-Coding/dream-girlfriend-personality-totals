@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+import itertools
+import time
+
+
+>>>>>>> 884a953f971a7c9d29fb3cfbdd4c1d9f362bf8e8
 class Personality:
     def __init__(self,
                  name="",
@@ -33,10 +40,16 @@ class Personality:
                'Intelligence = {6}, \n' \
                'Optimism = {7}, \n' \
                'Selfishness = {8}, \n' \
+<<<<<<< HEAD
                'Courage = {9}'.format(self.kindness, self.naughtiness, self.grace,
                                       self.flamboyance, self.shyness, self.cheerfulness,
                                       self.intelligence, self.optimism, self.selfishness,
                                       self.courage)
+=======
+               'Courage = {9}'.format(
+            self.kindness, self.naughtiness, self.grace, self.flamboyance, self.shyness, self.cheerfulness,
+            self.intelligence, self.optimism, self.selfishness, self.courage)
+>>>>>>> 884a953f971a7c9d29fb3cfbdd4c1d9f362bf8e8
         # return self.name
 
     def to_string(self):
@@ -94,17 +107,29 @@ def add_traits_list(pers_list):
         return add_traits(pers_list[0], add_traits_list(pers_list[1:]))
 
 
+<<<<<<< HEAD
 def personality_total(personality_list):
     result = []
     num_of_subsets = 1 << len(personality_list)
+=======
+def personality_total(personalities):
+    result = []
+    num_of_subsets = 1 << len(personalities)
+>>>>>>> 884a953f971a7c9d29fb3cfbdd4c1d9f362bf8e8
 
     for i in range(num_of_subsets):
         subset = []
         mask = 1
 
+<<<<<<< HEAD
         for k in range(len(personality_list)):
             if (mask & i) != 0:
                 subset.append(personality_list[k])
+=======
+        for k in range(len(personalities)):
+            if (mask & i) != 0:
+                subset.append(personalities[k])
+>>>>>>> 884a953f971a7c9d29fb3cfbdd4c1d9f362bf8e8
             mask = mask << 1
         result.append(subset)
     return result
@@ -132,8 +157,13 @@ personalities.extend((standard, friendly, tomboy, gentle, pure, intelligent, tsu
                       princess, bossy, chunibyo, kuudere))
 
 
+<<<<<<< HEAD
 def personality_combinations(personality_list, number_of_personalities):
     all_subsets = personality_total(personality_list)
+=======
+def personality_combinations(personalities, number_of_personalities):
+    all_subsets = personality_total(personalities)
+>>>>>>> 884a953f971a7c9d29fb3cfbdd4c1d9f362bf8e8
     count = 0
     # first_personalities = [standard, friendly, tomboy]
     for subset in all_subsets:
@@ -153,7 +183,11 @@ def personality_combinations(personality_list, number_of_personalities):
                 #     print(a.to_string(), end = " ")
                 # print()
                 is_valid = True
+<<<<<<< HEAD
                 for i in personality_list:
+=======
+                for i in personalities:
+>>>>>>> 884a953f971a7c9d29fb3cfbdd4c1d9f362bf8e8
                     subset_sum = total
                     # sum_after_subtracting = 0
 

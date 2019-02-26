@@ -37,10 +37,6 @@ class Personality:
                                       self.flamboyance, self.shyness, self.cheerfulness,
                                       self.intelligence, self.optimism, self.selfishness,
                                       self.courage)
-        'Courage = {9}'.format(
-            self.kindness, self.naughtiness, self.grace, self.flamboyance, self.shyness, self.cheerfulness,
-            self.intelligence, self.optimism, self.selfishness, self.courage)
-    # return self.name
 
 
 def to_string(self):
@@ -102,11 +98,6 @@ def personality_total(personality_list):
     result = []
     num_of_subsets = 1 << len(personality_list)
 
-
-def personality_total(personality_list):
-    result = []
-    num_of_subsets = 1 << len(personality_list)
-
     for i in range(num_of_subsets):
         subset = []
         mask = 1
@@ -142,10 +133,6 @@ chunibyo = Personality(name="Chunibyo", naughtiness=1500, flamboyance=2000, chee
 kuudere = Personality(name="Kuudere", kindness=2500, grace=2000, intelligence=2500, courage=2000)
 personalities.extend((standard, friendly, tomboy, gentle, pure, intelligent, tsundere, timid, sweet, yandere,
                       princess, bossy, chunibyo, kuudere))
-
-
-def personality_combinations(personality_list, number_of_personalities):
-    all_subsets = personality_total(personality_list)
 
 
 def personality_combinations(personality_list, number_of_personalities):
